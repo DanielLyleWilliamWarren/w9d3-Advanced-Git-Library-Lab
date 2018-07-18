@@ -11,7 +11,7 @@ public class Book {
     private String author;
     private boolean onLoan;
     private Borrower borrower;
-    private Library libary;
+    private Library library;
 
     public Book() {
     }
@@ -72,11 +72,11 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "library_id", nullable = false)
     public Library getLibary() {
-        return libary;
+        return library;
     }
 
     public void setLibary(Library libary) {
-        this.libary = libary;
+        this.library = libary;
     }
 
 }
