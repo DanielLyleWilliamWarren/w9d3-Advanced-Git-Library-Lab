@@ -2,7 +2,14 @@ package db;
 
 import models.Department;
 import models.Manager;
+<<<<<<< HEAD
 import org.hibernate.*;
+=======
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+>>>>>>> master
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
@@ -118,4 +125,9 @@ public class DBHelper {
         return getUnique(cr);
 
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 }
