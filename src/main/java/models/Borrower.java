@@ -1,16 +1,20 @@
 package models;
 
+import javax.persistence.*;
+import java.util.List;
+
 public class Borrower {
     private int id;
     private String name;
-    private List<books> itemsBorrowed;
+    private List<Book> itemsBorrowed;
 
-    public borrower(String name){
+    public Borrower(String name){
         this.name = name;
     }
 
     @Id
     @GeneratedValue
+    @Column(name="id")
     public int getId() {
         return id;
     }
@@ -19,6 +23,7 @@ public class Borrower {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -27,11 +32,12 @@ public class Borrower {
         this.name = name;
     }
 
-    public List<books> getItemsBorrowed() {
+    @Column(name="books_borrowed")
+    public List<Book> getItemsBorrowed() {
         return itemsBorrowed;
     }
 
-    public void setItemsBorrowed(List<books> itemsBorrowed) {
+    public void setItemsBorrowed(List<Book> itemsBorrowed) {
         this.itemsBorrowed = itemsBorrowed;
     }
 }
