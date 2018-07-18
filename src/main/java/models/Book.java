@@ -16,10 +16,10 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, boolean onLoan) {
+    public Book(String title, String author){
         this.title = title;
         this.author = author;
-        this.onLoan = onLoan;
+        this.onLoan = false;
     }
 
 
