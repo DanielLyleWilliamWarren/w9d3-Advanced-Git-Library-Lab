@@ -45,6 +45,7 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
     @Column(name = "onLoan")
     public boolean isOnLoan() {
         return onLoan;
@@ -54,6 +55,7 @@ public class Book {
         this.onLoan = onLoan;
     }
 
+    @Column(name = "borrower")
     public Borrower getBorrower() {
         return borrower;
     }
