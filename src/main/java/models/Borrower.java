@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
@@ -10,7 +11,7 @@ public class Borrower {
 
     private int id;
     private String name;
-    private List<Book> itemsBorrowed;
+    private ArrayList<Book> itemsBorrowed;
     private Library library;
 
     public Borrower() {
@@ -18,6 +19,7 @@ public class Borrower {
 
     public Borrower(String name) {
         this.name = name;
+        this.itemsBorrowed = new ArrayList<Book>();
     }
 
     @Id
@@ -45,12 +47,12 @@ public class Borrower {
         return itemsBorrowed;
     }
 
-    public void setItemsBorrowed(List<Book> itemsBorrowed) {
+    public void setItemsBorrowed(ArrayList<Book> itemsBorrowed) {
         this.itemsBorrowed = itemsBorrowed;
     }
 
     @Column
-    public List<Book> getBooks() {
+    public ArrayList<Book> getBooks() {
         return itemsBorrowed;
     }
 
