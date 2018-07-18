@@ -1,7 +1,5 @@
 package db;
 
-import models.Department;
-import models.Manager;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
