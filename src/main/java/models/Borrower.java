@@ -1,15 +1,16 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name = "borrowers")
 public class Borrower {
 
     private int id;
     private String name;
     private Set<Book> books;
+    private Library library;
 
     public Borrower(){}
 
@@ -23,10 +24,10 @@ public class Borrower {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-
     @Column(name = "name")
     public String getName() {
         return name;
@@ -36,12 +37,21 @@ public class Borrower {
         this.name = name;
     }
 
-    @Column
     public Set<Book> getBooks() {
         return books;
     }
 
     public void setBooks(Set<Book> books) {
         this.books = books;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "library_id", nullable = false)
+    public Library getLibrary() {
+        return library;
+    }
+
+    public void setLibrary(Library library) {
+        this.library = library;
     }
 }
