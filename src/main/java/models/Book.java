@@ -2,6 +2,8 @@ package models;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "books")
 public class Book {
 
     private int id;
@@ -9,7 +11,10 @@ public class Book {
     private String author;
     private boolean onLoan;
     private Borrower borrower;
-    public Book(){}
+    private Library libary;
+
+    public Book() {
+    }
 
     public Book(String title, String author, boolean onLoan) {
         this.title = title;
@@ -24,6 +29,7 @@ public class Book {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -62,6 +68,16 @@ public class Book {
 
     public void setBorrower(Borrower borrower) {
         this.borrower = borrower;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "library_id", nullable = false)
+    public Library getLibary() {
+        return libary;
+    }
+
+    public void setLibary(Library libary) {
+        this.libary = libary;
     }
 
 }
