@@ -1,9 +1,8 @@
 package models;
 
+import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
-
-
 
 @Entity
 @Table(name = "borrowers")
@@ -11,18 +10,19 @@ public class Borrower {
 
     private int id;
     private String name;
-    private Set<Book> books;
+    private List<Book> itemsBorrowed;
     private Library library;
 
-    public Borrower(){}
+    public Borrower() {
+    }
 
-    public Borrower(String name){
+    public Borrower(String name) {
         this.name = name;
     }
 
     @Id
     @GeneratedValue
-    @Column(name="id")
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -40,13 +40,22 @@ public class Borrower {
         this.name = name;
     }
 
+    @Column(name = "books_borrowed")
+    public List<Book> getItemsBorrowed() {
+        return itemsBorrowed;
+    }
+
+    public void setItemsBorrowed(List<Book> itemsBorrowed) {
+        this.itemsBorrowed = itemsBorrowed;
+    }
+
     @Column
-    public Set<Book> getBooks() {
-        return books;
+    public List<Book> getBooks() {
+        return itemsBorrowed;
     }
 
     public void setBooks(Set<Book> books) {
-        this.books = books;
+        this.itemsBorrowed = itemsBorrowed;
     }
 
     @ManyToOne
@@ -59,3 +68,4 @@ public class Borrower {
         this.library = library;
     }
 }
+
