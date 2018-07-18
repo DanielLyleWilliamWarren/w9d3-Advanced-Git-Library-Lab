@@ -1,5 +1,8 @@
 package models;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Set;
 
 public class Borrower {
@@ -33,6 +36,7 @@ public class Borrower {
         this.name = name;
     }
 
+    @Column
     public Set<Book> getBooks() {
         return books;
     }

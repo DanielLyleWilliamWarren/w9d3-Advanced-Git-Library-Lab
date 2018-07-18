@@ -1,5 +1,7 @@
 package models;
 
+import javax.persistence.*;
+
 public class Book {
 
     private int id;
