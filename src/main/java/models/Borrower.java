@@ -1,6 +1,8 @@
 package models;
-import javax.persistence.*;
+
 import java.util.List;
+import java.util.Set;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "borrowers")
@@ -38,13 +40,21 @@ public class Borrower {
         this.name = name;
     }
 
-
     @Column(name = "books_borrowed")
     public List<Book> getItemsBorrowed() {
         return itemsBorrowed;
     }
 
     public void setItemsBorrowed(List<Book> itemsBorrowed) {
+        this.itemsBorrowed = itemsBorrowed;
+    }
+
+    @Column
+    public List<Book> getBooks() {
+        return itemsBorrowed;
+    }
+
+    public void setBooks(Set<Book> books) {
         this.itemsBorrowed = itemsBorrowed;
     }
 

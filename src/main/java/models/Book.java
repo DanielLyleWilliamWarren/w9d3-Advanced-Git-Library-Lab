@@ -61,6 +61,7 @@ public class Book {
         this.onLoan = onLoan;
     }
 
+    @Column(name = "borrower")
     public Borrower getBorrower() {
         return borrower;
     }

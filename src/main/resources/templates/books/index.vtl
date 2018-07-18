@@ -1,0 +1,22 @@
+<h1>All Books</h1>
+
+
+<a href="/books/new">Add New Book</a>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>on Loan</th>
+        <th>Borrower</th>
+    </tr>
+    #foreach($book in $books)
+    <tr>
+        <td>$book.getTitle()</td>
+        <td>$book.getAuthor()</td>
+        <td>$book.getOnLoan()</td>
+        <td>£$book.getBorrower().getname()</td>
+        <td><a href="/books/$book.getId()/edit">Edit Book</a></td>
+        <td><form action="/books/$book.getId()" method="delete"><input type="submit", value="Delete book"></form></td>
+    </tr>
+    #end
+</table>
